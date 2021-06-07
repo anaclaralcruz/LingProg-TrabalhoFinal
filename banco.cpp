@@ -31,9 +31,9 @@ void Banco::buscaReceita (const char* nome_da_receita) {
     int rc = sqlite3_step(stmt);
 
     if (rc == SQLITE_DONE) {
-        cout << "Nao encontrado" << endl ;
+        cout << "Receita nao encontrada! Verifique o nome e tente novamente :(" << endl ;
     }
-    
+
     Receita receita;
     receita.setNome(string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1))));
     receita.setModoDePreparo(string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2))));
@@ -41,8 +41,16 @@ void Banco::buscaReceita (const char* nome_da_receita) {
     receita.setRendimento(string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4))));
     receita.setTipo(string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5))));
     receita.setNota(string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 6))));
-    receita.imprime();
+
+    sqlite3_prepare_v2(db, 
+        "SELECT ingredientes.ingrediente_nome FROM receitas JOIN receitas_ingredientes ON (receitas_ingredientes.receita_id = receitas.receita_id) JOIN ingredientes ON (ingredientes.ingrediente_id = receitas_ingredientes.ingrediente_id) WHERE receitas.nome = ?"
+        , -1, &stmt, 0);
+
+    sqlite3_bind_text(stmt, 1, nome_da_receita, strlen(nome_da_receita),SQLITE_STATIC);
+    while (sqlite3_step(stmt) != SQLITE_DONE)
+        receita.setIngrediente(string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0))));
 
     sqlite3_finalize(stmt);
+    receita.imprime();
 }
 

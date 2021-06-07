@@ -10,6 +10,7 @@
 /* Inicializa a classe receita */
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -21,10 +22,12 @@ class Receita{
     void setTipo(string);
     void setNota(string);
     void setTempo(string);
+    void setIngrediente(string);
 
     void imprime();
 
   private:
     string nome, modoDePreparo, tipo;
     int rendimento, tempo, nota;
+    vector<string> ingredientes;
 };

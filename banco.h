@@ -27,5 +27,5 @@ class Banco{
 
     sqlite3* db;
     sqlite3_stmt *stmt;
-    char* errmsg ;
+  //  char* errmsg ;
 };

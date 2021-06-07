@@ -39,10 +39,17 @@ void Receita::setModoDePreparo (string novoModo) {
     modoDePreparo = novoModo;
 }
 
+void Receita::setIngrediente (string novoIngrediente) {
+    ingredientes.push_back (novoIngrediente);
+}
+
 void Receita::imprime(){
-    cout << "Receita de " << nome << ": " << endl;
+    cout << "Receita de " << nome << ": " << endl << endl;
     cout << "Ingredientes: " << endl;
-    cout << "Modo de preparo: " << modoDePreparo << endl;
+    for (auto& ingrediente : ingredientes)
+        cout << ingrediente << endl ;
+    cout << endl << "Modo de preparo: " << modoDePreparo << endl << endl;
     cout << "Rende " << rendimento << " porcoes." << endl;
+    cout << "Tempo de preparo: " << tempo << " minutos." << endl << endl;
     cout << "Aproveite! :)" << endl;
 }

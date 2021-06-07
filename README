@@ -4,3 +4,7 @@ sudo apt install libsqlite3-dev
 g++ -Wall  main.cpp banco.cpp receita.cpp -o teste -lsqlite3
 
 http://www.adp-gmbh.ch/sqlite/bind_insert.html
+
+Extensoes:
+sqlite
+liveshare
