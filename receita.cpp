@@ -15,6 +15,8 @@
 
 using namespace std;
 
+Receita::Receita (){}
+
 void Receita::setNota(string novaNota){
     nota = stoi(novaNota);
 }
@@ -52,4 +54,37 @@ void Receita::imprime(){
     cout << "Rende " << rendimento << " porcoes." << endl;
     cout << "Tempo de preparo: " << tempo << " minutos." << endl << endl;
     cout << "Aproveite! :)" << endl;
+}
+
+int Receita::getNota(){
+    return nota;
+}
+
+int Receita::getRendimento(){
+    return rendimento;
+}
+
+int Receita::getTempo(){
+    return tempo;
+}
+
+const char* Receita::getNome(){
+    const char* c = nome.c_str();
+    return c;
+}
+
+const char* Receita::getModoDePreparo(){
+    const char* c = modoDePreparo.c_str();
+    return c;
+}
+
+const char* Receita::getTipo(){
+    const char* c = tipo.c_str();
+    return c;
+}
+vector<const char*> Receita::getIngredientes(){
+    vector<const char*> c;
+    for (auto& ingrediente : ingredientes)
+        c.push_back(ingrediente.c_str());
+    return c;
 }

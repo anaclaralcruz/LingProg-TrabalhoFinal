@@ -13,7 +13,7 @@
 #include <sqlite3.h>
 #include <vector>
 #include <string>
-
+#include "receita.h"
 using namespace std;
 
 class Banco{
@@ -21,11 +21,18 @@ class Banco{
     Banco(const char*);
 
     void buscaReceita(const char*);
+    void atualizarNota(const char*, int);
+    void adicionarReceita(Receita);
+    void ranking();
+    void exibirReceitas();
    
 
   private:
+    int getIngredienteId();
+    int getReceitaId();
 
     sqlite3* db;
     sqlite3_stmt *stmt;
-  //  char* errmsg ;
+    sqlite3_stmt *stmt2;
+    sqlite3_stmt *stmt3;
 };

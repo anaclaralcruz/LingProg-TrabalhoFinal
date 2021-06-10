@@ -1,10 +1,51 @@
+Autoras: Ana Clara Loureiro Cruz e Maria Clara Gonçalves Baptista
 
-sudo apt install libsqlite3-dev
+UFRJ - DEL - ENGENHARIA ELETRONICA E DE COMPUTACAO
+Trabalho Final de Ling Prog
+Programa feito em c++
 
-g++ -Wall  main.cpp banco.cpp receita.cpp -o teste -lsqlite3
+------------------------- PROJETO PARA GERIR UM BANCO DE DADOS DE RECEITAS -----------------------------
 
-http://www.adp-gmbh.ch/sqlite/bind_insert.html
+Este programa tem como objetivo gerir um banco de dados que simula um caderno de receitas.
+No menu, estao seguintes funcionalidades:
+1. Buscar uma receita
+2. Adicionar uma receita
+3. Atualizar a nota de uma receita
+4. Exibir ranking de receitas por nota
+5. Exibir receitas disponiveis
 
-Extensoes:
-sqlite
-liveshare
+--------------------------------------- MANUAL DO PROGRAMA ---------------------------------------------
+
+ULTILIZACAO
+    [ANTES DE UTILIZAR]
+        Para utilizar o programa, eh necessario ter a biblioteca <sqlite3.h> instalada no computador. 
+        No Linux, basta usar o seguinte comando para instala-la:
+            sudo apt install libsqlite3-dev
+
+    - Abrir pasta
+    - Compilar e linkeditar o programa usando o comando "make"
+    - Inicializar o executavel "./trabalho"
+    (um menu aparecera na tela com as opcoes)
+    - insira o numero correspondente a opcao que deseja, o resultado aparecera na tela.
+
+DADOS:
+    Os dados de entrada sao um arquivo do tipo 'Sqlite' com terminacao '.db'. Neste diretorio ha um
+    exemplo de arquivo de entrada com 3 tabelas, chamado "Livro_de_receitas.db"
+
+------------------------------------------- IMPLEMENTACAO ---------------------------------------------
+
+    Para fazer a interface entre a linguagem C++ e SQL, utilizou-se a biblioteca <sqlite3.h>.
+
+---------------------------------------------- ARQUIVOS -----------------------------------------------
+
+"banco.cpp"                     Contem os metodos referentes a classe Banco
+"banco.h"                       Inicializa a classe Banco
+"recita.cpp"                    Contem os metodos referentes a classe Receita
+"Receita.h"                     Inicializa a classe Receita
+"Queries.sql"                   Contem as flags necessarias para construir o banco de dados usado no programa
+"main.cpp"                      Programa principal que contem o menu do programa
+"Makefile"                      Realiza a compilacao e linkedicao do programa
+
+
+
+
