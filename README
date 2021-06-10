@@ -40,9 +40,9 @@ DADOS:
 
 "banco.cpp"                     Contem os metodos referentes a classe Banco
 "banco.h"                       Inicializa a classe Banco
-"recita.cpp"                    Contem os metodos referentes a classe Receita
+"receita.cpp"                    Contem os metodos referentes a classe Receita
 "Receita.h"                     Inicializa a classe Receita
-"Queries.sql"                   Contem as flags necessarias para construir o banco de dados usado no programa
+"Queries.sql"                   Contem as queries necessarias para construir o banco de dados usado no programa
 "main.cpp"                      Programa principal que contem o menu do programa
 "Makefile"                      Realiza a compilacao e linkedicao do programa
 

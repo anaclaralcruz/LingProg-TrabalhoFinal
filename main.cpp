@@ -88,7 +88,6 @@ int main (){
                 i=0;
         }
         banco.adicionarReceita(receita);
-        main ();
     }
 
     else if (opcaoMenu == 3){
@@ -98,7 +97,6 @@ int main (){
         cout << "Entre com a nova nota: ";
         getline(cin, nota);
         banco.atualizarNota(nome.c_str(), stoi(nota));
-         main ();
     }
 
     else if (opcaoMenu == 4){

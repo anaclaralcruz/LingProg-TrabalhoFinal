@@ -155,6 +155,7 @@ void Banco::ranking () {
     int i = 1;
     cout << "NOME" << "\t\t\t\t"<< "NOTA"<<endl;
     while (sqlite3_step(stmt) != SQLITE_DONE){
+        cout << i << ". " ;
         cout<< string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0))) <<"\t\t\t\t";
         cout << sqlite3_column_int (stmt, 1) << endl;
         i++;
